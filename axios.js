@@ -9,9 +9,10 @@ axios.get(url)
   .then(res => {
     const data = res.data;
 
+    console.log("=== AXIOS API ===");
     console.log("Ville:", CITY);
     console.log("Description:", data.weather[0].description);
     console.log("Température:", data.main.temp, "°C");
     console.log("Humidité:", data.main.humidity, "%");
   })
-  .catch(err => console.log(err));
+  .catch(err => console.error("Erreur:", err.message));
