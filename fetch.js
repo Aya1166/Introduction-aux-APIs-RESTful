@@ -6,9 +6,10 @@ const url = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${A
 fetch(url)
   .then(res => res.json())
   .then(data => {
+    console.log("=== FETCH API ===");
     console.log("Ville:", CITY);
     console.log("Description:", data.weather[0].description);
     console.log("Température:", data.main.temp, "°C");
     console.log("Humidité:", data.main.humidity, "%");
   })
-  .catch(err => console.log(err));
+  .catch(err => console.error("Erreur:", err));
